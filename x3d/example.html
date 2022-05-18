@@ -1,0 +1,181 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Lab 6 Responsive Mobile First Web 3D Applications 2022</title>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="main">
+    <h2>X3D Model</h2>
+    <h5>3D Model</h5>
+
+
+<div class="tab "style="width:60%">
+  <button class="tablinks" onclick="openCity(event, 'Coke')" id="defaultOpen">Coke</button>
+  <button class="tablinks" onclick="openCity(event, 'Sprite')">Sprite</button>
+  <button class="tablinks" onclick="openCity(event, 'Pepper')">Pepper</button>
+</div>
+
+<div id="Coke" class="tabcontent">
+  <h3> Coca Cola X3D Model</h3>
+  <p>
+ 
+</p>
+<x3d width='600px' height='400px'>
+    <scene>
+            <viewpoint position="-1.94639 1.79771 -2.89271" orientation="0.03886 0.99185 0.12133 3.75685"></viewpoint>
+            <Inline nameSpaceName="Deer" mapDEFToID="true"
+                    onclick='redNose();' url="Deer.x3D" />
+    </scene>
+</x3d>
+  <p>This X3D model of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.</p>
+</div>
+
+<div id="Sprite" class="tabcontent">
+  <h3>Sprite X3D Model</h3>
+  
+  <x3d width='500px' height='400px'>
+    <scene>
+            <viewpoint position="-1.94639 1.79771 -2.89271" orientation="0.03886 0.99185 0.12133 3.75685"></viewpoint>
+            <Inline nameSpaceName="Deer" mapDEFToID="true"
+                    onclick='redNose();' url="Deer.x3D" />
+    </scene>
+</x3d>
+  
+  <p>This X3D model of the sprite bottle has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.
+  </p>
+</div>
+   
+</div>
+
+<div id="Pepper" class="tabcontent">
+  <h3>Dr Pepper X3D Model</h3>
+  <x3d width='500px' height='400px'>
+    <scene>
+            <viewpoint position="-1.94639 1.79771 -2.89271" orientation="0.03886 0.99185 0.12133 3.75685"></viewpoint>
+            <Inline nameSpaceName="Deer" mapDEFToID="true"
+                    onclick='redNose();' url="Deer.x3D" />
+    </scene>
+</x3d>
+  <p>This X3D model of the pepper cup has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.
+  </p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+
+
+<h1>Using the Inline Node</h1>
+<script>
+    function redNose()
+    {
+        if(document.getElementById('Deer__MA_Nose').getAttribute('diffuseColor')!= '1 0 0')
+            document.getElementById('Deer__MA_Nose').setAttribute('diffuseColor', '1 0 0');
+        else
+            document.getElementById('Deer__MA_Nose').setAttribute('diffuseColor', '0 0 0');
+    }
+</script>
+
+<div class="side">
+      <div class="side">
+    <h2>GALLERY</h2>
+    <h5>3D Images</h5>
+    
+	<table style="width:100%">
+  <tr>
+    <td><img class="card-img-top" src="Assets\imgs\sprite_2.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+    <td><img class="card-img-top" src="Assets\imgs\coke_1.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+    
+  </tr>
+  <tr>
+    <td><img class="card-img-top" src="Assets\imgs\pepper_1.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+   <td><img class="card-img-top" src="Assets\imgs\sprite_1.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+    </tr>
+	<tr>
+    <td><img class="card-img-top" src="Assets\imgs\pepper_2.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+   <td><img class="card-img-top" src="Assets\imgs\coke_2.png" class="w3-border w3-padding" alt="Sprite Classic" style="padding:4px;width:100%"></td>
+    </tr>
+</table>
+	
+   
+    <p>These 3D images of the Coke can, Sprite bottle and Dr Pepper cup are rendered in 3ds Max 2017 with Mental Ray</p>
+    <br>
+    
+ </div>
+</div>
+
+
+<div class="footer">
+<h2> Dr Pepper — Liquid Sunshine</h2>
+<h3>23 fruit flavours </h3>
+ <p>Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over a century and it's still the same, with that distinctive flavour you just can't quite put your tongue on. It was created by Texas pharmacist Charles Alderton in 1885. He gave a sample of the first ever batch to Wade Morrison, a local shop owner, and Mr Morrison instantly agreed to stock the drink. The distinctive, bold taste of Dr Pepper has been popular ever since.</p>
+</div>
+
+</body>
+</html>
